@@ -1,7 +1,6 @@
 {
   "name": "p0c",
   "version": "1.0.0",
-
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel src/index.html",
@@ -12,8 +11,11 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@auth0/auth0-react": "^2.3.0",
+    "@tailwindcss/postcss": "^4.0.17",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "tailwindcss": "^4.0.17"
   },
   "devDependencies": {
     "parcel": "^2.14.2"
