@@ -21061,20 +21061,24 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _auth0React = require("@auth0/auth0-react");
-var _reactRouter = require("react-router");
+var _error = require("./Error");
+var _errorDefault = parcelHelpers.interopDefault(_error);
+var _loadingScreen = require("./LoadingScreen");
+var _loadingScreenDefault = parcelHelpers.interopDefault(_loadingScreen);
 var _s = $RefreshSig$();
 const Dashboard = ()=>{
     _s();
-    const { user, logout, isAuthenticated } = (0, _auth0React.useAuth0)();
-    const navigate = (0, _reactRouter.useNavigate)();
-    (0, _react.useEffect)(()=>{
-        if (!isAuthenticated) navigate("/error");
-    }, [
-        isAuthenticated,
-        navigate
-    ]);
-    if (!isAuthenticated) return null;
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+    const { user, logout, isAuthenticated, isLoading } = (0, _auth0React.useAuth0)();
+    if (isLoading) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _loadingScreenDefault.default), {}, void 0, false, {
+        fileName: "components/Dashboard.js",
+        lineNumber: 10,
+        columnNumber: 12
+    }, undefined);
+    return !isAuthenticated ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _errorDefault.default), {}, void 0, false, {
+        fileName: "components/Dashboard.js",
+        lineNumber: 13,
+        columnNumber: 29
+    }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "flex flex-col items-center justify-center min-h-screen",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
@@ -21085,7 +21089,7 @@ const Dashboard = ()=>{
                 ]
             }, void 0, true, {
                 fileName: "components/Dashboard.js",
-                lineNumber: 23,
+                lineNumber: 15,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -21093,7 +21097,7 @@ const Dashboard = ()=>{
                 children: user?.email
             }, void 0, false, {
                 fileName: "components/Dashboard.js",
-                lineNumber: 24,
+                lineNumber: 16,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -21106,20 +21110,19 @@ const Dashboard = ()=>{
                 children: "Logout"
             }, void 0, false, {
                 fileName: "components/Dashboard.js",
-                lineNumber: 25,
+                lineNumber: 17,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "components/Dashboard.js",
-        lineNumber: 22,
+        lineNumber: 14,
         columnNumber: 5
     }, undefined);
 };
-_s(Dashboard, "v9SDsZZRQoQIo+7qCJTZnv2Bd2I=", false, function() {
+_s(Dashboard, "C4VIbjaguTbiP9RCbYC+ypwVw1Q=", false, function() {
     return [
-        (0, _auth0React.useAuth0),
-        (0, _reactRouter.useNavigate)
+        (0, _auth0React.useAuth0)
     ];
 });
 _c = Dashboard;
@@ -21132,7 +21135,65 @@ $RefreshReg$(_c, "Dashboard");
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","@auth0/auth0-react":"6XUEC","react-router":"2jawN","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"2jawN":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","@auth0/auth0-react":"6XUEC","./Error":"92xM8","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi","./LoadingScreen":"1Dgem"}],"92xM8":[function(require,module,exports,__globalThis) {
+var $parcel$ReactRefreshHelpers$54f4 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+$parcel$ReactRefreshHelpers$54f4.init();
+var prevRefreshReg = globalThis.$RefreshReg$;
+var prevRefreshSig = globalThis.$RefreshSig$;
+$parcel$ReactRefreshHelpers$54f4.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _reactRouter = require("react-router");
+const Error = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "flex flex-col items-center justify-center min-h-screen bg-gray-100 text-center",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                className: "text-3xl font-bold text-red-600",
+                children: "Access Denied"
+            }, void 0, false, {
+                fileName: "components/Error.js",
+                lineNumber: 6,
+                columnNumber: 11
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                className: "text-gray-700 mt-2",
+                children: "You are not authorized to view this page."
+            }, void 0, false, {
+                fileName: "components/Error.js",
+                lineNumber: 7,
+                columnNumber: 11
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouter.Link), {
+                to: "/",
+                className: "mt-4 px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-500",
+                children: "Go to Login"
+            }, void 0, false, {
+                fileName: "components/Error.js",
+                lineNumber: 10,
+                columnNumber: 11
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "components/Error.js",
+        lineNumber: 5,
+        columnNumber: 9
+    }, undefined);
+};
+_c = Error;
+exports.default = Error;
+var _c;
+$RefreshReg$(_c, "Error");
+
+  $parcel$ReactRefreshHelpers$54f4.postlude(module);
+} finally {
+  globalThis.$RefreshReg$ = prevRefreshReg;
+  globalThis.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"dVPUn","react-router":"2jawN","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"2jawN":[function(require,module,exports,__globalThis) {
 /**
  * react-router v7.4.0
  *
@@ -30584,64 +30645,55 @@ module.exports.parse = parse;
 module.exports.parseString = parseString;
 module.exports.splitCookiesString = splitCookiesString;
 
-},{}],"92xM8":[function(require,module,exports,__globalThis) {
-var $parcel$ReactRefreshHelpers$54f4 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-$parcel$ReactRefreshHelpers$54f4.init();
+},{}],"1Dgem":[function(require,module,exports,__globalThis) {
+var $parcel$ReactRefreshHelpers$929b = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+$parcel$ReactRefreshHelpers$929b.init();
 var prevRefreshReg = globalThis.$RefreshReg$;
 var prevRefreshSig = globalThis.$RefreshSig$;
-$parcel$ReactRefreshHelpers$54f4.prelude(module);
+$parcel$ReactRefreshHelpers$929b.prelude(module);
 
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _reactRouter = require("react-router");
-const Error = ()=>{
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+const LoadingScreen = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "flex flex-col items-center justify-center min-h-screen bg-gray-100 text-center",
+        className: "flex items-center justify-center min-h-screen bg-gray-100",
         children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                className: "text-3xl font-bold text-red-600",
-                children: "Access Denied"
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "animate-spin rounded-full h-12 w-12 border-4 border-blue-500 border-t-transparent"
             }, void 0, false, {
-                fileName: "components/Error.js",
+                fileName: "components/LoadingScreen.js",
                 lineNumber: 6,
-                columnNumber: 11
+                columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                className: "text-gray-700 mt-2",
-                children: "You are not authorized to view this page."
+                className: "ml-4 text-lg font-semibold text-gray-700",
+                children: "Loading..."
             }, void 0, false, {
-                fileName: "components/Error.js",
+                fileName: "components/LoadingScreen.js",
                 lineNumber: 7,
-                columnNumber: 11
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouter.Link), {
-                to: "/",
-                className: "mt-4 px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-500",
-                children: "Go to Login"
-            }, void 0, false, {
-                fileName: "components/Error.js",
-                lineNumber: 10,
-                columnNumber: 11
+                columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
-        fileName: "components/Error.js",
+        fileName: "components/LoadingScreen.js",
         lineNumber: 5,
-        columnNumber: 9
+        columnNumber: 5
     }, undefined);
 };
-_c = Error;
-exports.default = Error;
+_c = LoadingScreen;
+exports.default = LoadingScreen;
 var _c;
-$RefreshReg$(_c, "Error");
+$RefreshReg$(_c, "LoadingScreen");
 
-  $parcel$ReactRefreshHelpers$54f4.postlude(module);
+  $parcel$ReactRefreshHelpers$929b.postlude(module);
 } finally {
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"dVPUn","react-router":"2jawN","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}]},["ihYAY","a0t4e"], "a0t4e", "parcelRequire5a60", null, null, "http://localhost:1234")
+},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}]},["ihYAY","a0t4e"], "a0t4e", "parcelRequire5a60", null, null, "http://localhost:1234")
 
 //# sourceMappingURL=P0C.31b563d9.js.map

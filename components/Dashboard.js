@@ -1,24 +1,16 @@
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
-import { useNavigate } from "react-router";
-import { useEffect } from "react";
+import Error from "./Error";
+import LoadingScreen from "./LoadingScreen";
 
 
 const Dashboard = () => {
-  const { user, logout, isAuthenticated } = useAuth0();
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    if (!isAuthenticated) {
-      navigate("/error");
-    }
-  }, [isAuthenticated, navigate]);
-
-  if (!isAuthenticated) {
-    return null;
+  const { user, logout, isAuthenticated, isLoading } = useAuth0();
+  if(isLoading) {
+    return <LoadingScreen />
   }
 
-  return (
+ return !isAuthenticated ? (<Error/>) : (
     <div className="flex flex-col items-center justify-center min-h-screen">
       <h1 className="text-2xl font-bold">Welcome, {user?.name}</h1>
       <p className="text-gray-600">{user?.email}</p>
