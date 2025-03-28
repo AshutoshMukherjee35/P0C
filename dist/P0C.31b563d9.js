@@ -680,20 +680,15 @@ var _authProviderDefault = parcelHelpers.interopDefault(_authProvider);
 var _app = require("./App");
 var _appDefault = parcelHelpers.interopDefault(_app);
 (0, _clientDefault.default).createRoot(document.getElementById("root")).render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _authProviderDefault.default), {
-    domain: "dev-6mguncdaalrmu27g.us.auth0.com",
-    clientId: "PB4TcwzXxfS1fy8XxREwxu3xGMChx6Vx",
-    authorizationParams: {
-        redirect_uri: `${window.location.origin}/dashboard`
-    },
     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _appDefault.default), {}, void 0, false, {
         fileName: "src/index.js",
-        lineNumber: 15,
+        lineNumber: 10,
         columnNumber: 5
     }, undefined)
 }, void 0, false, {
     fileName: "src/index.js",
-    lineNumber: 8,
-    columnNumber: 61
+    lineNumber: 9,
+    columnNumber: 1
 }, undefined));
 
   $parcel$ReactRefreshHelpers$3cdc.postlude(module);
@@ -701,7 +696,7 @@ var _appDefault = parcelHelpers.interopDefault(_app);
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","react-dom/client":"hrvwu","./App":"hh6uc","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi","./AuthProvider":"1cUYl"}],"dVPUn":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","react-dom/client":"hrvwu","./AuthProvider":"1cUYl","./App":"hh6uc","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"dVPUn":[function(require,module,exports,__globalThis) {
 'use strict';
 module.exports = require("ee51401569654d91");
 
@@ -16288,138 +16283,44 @@ module.exports = require("b0f0e6b9e8349dac");
     "undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ && "function" === typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(Error());
 })();
 
-},{"6f0162e9ab224cd4":"jMk1U"}],"hh6uc":[function(require,module,exports,__globalThis) {
-var $parcel$ReactRefreshHelpers$4089 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-$parcel$ReactRefreshHelpers$4089.init();
+},{"6f0162e9ab224cd4":"jMk1U"}],"1cUYl":[function(require,module,exports,__globalThis) {
+var $parcel$ReactRefreshHelpers$28ac = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+$parcel$ReactRefreshHelpers$28ac.init();
 var prevRefreshReg = globalThis.$RefreshReg$;
 var prevRefreshSig = globalThis.$RefreshSig$;
-$parcel$ReactRefreshHelpers$4089.prelude(module);
+$parcel$ReactRefreshHelpers$28ac.prelude(module);
 
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _example = require("../components/Example");
-var _exampleDefault = parcelHelpers.interopDefault(_example);
-var _dashboard = require("../components/Dashboard");
-var _dashboardDefault = parcelHelpers.interopDefault(_dashboard);
-var _reactRouter = require("react-router");
-const App = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouter.BrowserRouter), {
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouter.Routes), {
-            children: [
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouter.Route), {
-                    path: "/",
-                    element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _exampleDefault.default), {}, void 0, false, {
-                        fileName: "src/App.js",
-                        lineNumber: 10,
-                        columnNumber: 36
-                    }, void 0)
-                }, void 0, false, {
-                    fileName: "src/App.js",
-                    lineNumber: 10,
-                    columnNumber: 11
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouter.Route), {
-                    path: "/dashboard",
-                    element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _dashboardDefault.default), {}, void 0, false, {
-                        fileName: "src/App.js",
-                        lineNumber: 11,
-                        columnNumber: 45
-                    }, void 0)
-                }, void 0, false, {
-                    fileName: "src/App.js",
-                    lineNumber: 11,
-                    columnNumber: 11
-                }, undefined)
-            ]
-        }, void 0, true, {
-            fileName: "src/App.js",
-            lineNumber: 9,
-            columnNumber: 9
-        }, undefined)
+var _auth0React = require("@auth0/auth0-react");
+var _constants = require("../utils/constants");
+const AuthProvider = ({ children })=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _auth0React.Auth0Provider), {
+        domain: (0, _constants.AUTH_DOMAIN),
+        clientId: (0, _constants.CLIENT_ID),
+        authorizationParams: {
+            redirect_uri: `${window.location.origin}/dashboard`
+        },
+        children: children
     }, void 0, false, {
-        fileName: "src/App.js",
-        lineNumber: 8,
+        fileName: "src/AuthProvider.js",
+        lineNumber: 6,
         columnNumber: 9
     }, undefined);
 };
-_c = App;
-exports.default = App;
+_c = AuthProvider;
+exports.default = AuthProvider;
 var _c;
-$RefreshReg$(_c, "App");
+$RefreshReg$(_c, "AuthProvider");
 
-  $parcel$ReactRefreshHelpers$4089.postlude(module);
+  $parcel$ReactRefreshHelpers$28ac.postlude(module);
 } finally {
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","../components/Example":"k3Tmd","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi","../components/Dashboard":"afPWz","react-router":"2jawN"}],"k3Tmd":[function(require,module,exports,__globalThis) {
-var $parcel$ReactRefreshHelpers$7f85 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-$parcel$ReactRefreshHelpers$7f85.init();
-var prevRefreshReg = globalThis.$RefreshReg$;
-var prevRefreshSig = globalThis.$RefreshSig$;
-$parcel$ReactRefreshHelpers$7f85.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _auth0React = require("@auth0/auth0-react");
-var _s = $RefreshSig$();
-const Example = ()=>{
-    _s();
-    const { loginWithRedirect, logout, isAuthenticated } = (0, _auth0React.useAuth0)();
-    console.log(isAuthenticated);
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "flex justify-center items-center min-h-screen",
-        children: !isAuthenticated ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-            onClick: ()=>loginWithRedirect(),
-            className: "cursor-pointer px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-500",
-            children: "Login / Signup"
-        }, void 0, false, {
-            fileName: "components/Example.js",
-            lineNumber: 12,
-            columnNumber: 9
-        }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-            onClick: ()=>logout({
-                    logoutParams: {
-                        returnTo: window.location.origin
-                    }
-                }),
-            className: "cursor-pointer px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-500",
-            children: "Logout"
-        }, void 0, false, {
-            fileName: "components/Example.js",
-            lineNumber: 19,
-            columnNumber: 9
-        }, undefined)
-    }, void 0, false, {
-        fileName: "components/Example.js",
-        lineNumber: 10,
-        columnNumber: 5
-    }, undefined);
-};
-_s(Example, "dELrWSWGk/VI6QVLd5sCxicaM/k=", false, function() {
-    return [
-        (0, _auth0React.useAuth0)
-    ];
-});
-_c = Example;
-exports.default = Example;
-var _c;
-$RefreshReg$(_c, "Example");
-
-  $parcel$ReactRefreshHelpers$7f85.postlude(module);
-} finally {
-  globalThis.$RefreshReg$ = prevRefreshReg;
-  globalThis.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","@auth0/auth0-react":"6XUEC","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"6XUEC":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"dVPUn","@auth0/auth0-react":"6XUEC","../utils/constants":"jcEU6","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"6XUEC":[function(require,module,exports,__globalThis) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Auth0Context", ()=>Auth0Context);
@@ -18715,7 +18616,15 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}],"7h6Pi":[function(require,module,exports,__globalThis) {
+},{}],"jcEU6":[function(require,module,exports,__globalThis) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "AUTH_DOMAIN", ()=>AUTH_DOMAIN);
+parcelHelpers.export(exports, "CLIENT_ID", ()=>CLIENT_ID);
+const AUTH_DOMAIN = "dev-6mguncdaalrmu27g.us.auth0.com";
+const CLIENT_ID = "PB4TcwzXxfS1fy8XxREwxu3xGMChx6Vx";
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"7h6Pi":[function(require,module,exports,__globalThis) {
 "use strict";
 var Refresh = require("7422ead32dcc1e6b");
 function debounce(func, delay) {
@@ -20993,7 +20902,152 @@ function $da9882e673ac146b$var$ErrorOverlay() {
     return null;
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"afPWz":[function(require,module,exports,__globalThis) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"hh6uc":[function(require,module,exports,__globalThis) {
+var $parcel$ReactRefreshHelpers$4089 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+$parcel$ReactRefreshHelpers$4089.init();
+var prevRefreshReg = globalThis.$RefreshReg$;
+var prevRefreshSig = globalThis.$RefreshSig$;
+$parcel$ReactRefreshHelpers$4089.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _example = require("../components/Example");
+var _exampleDefault = parcelHelpers.interopDefault(_example);
+var _dashboard = require("../components/Dashboard");
+var _dashboardDefault = parcelHelpers.interopDefault(_dashboard);
+var _error = require("../components/Error");
+var _errorDefault = parcelHelpers.interopDefault(_error);
+var _reactRouter = require("react-router");
+const App = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouter.BrowserRouter), {
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouter.Routes), {
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouter.Route), {
+                    path: "/",
+                    element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _exampleDefault.default), {}, void 0, false, {
+                        fileName: "src/App.js",
+                        lineNumber: 11,
+                        columnNumber: 36
+                    }, void 0)
+                }, void 0, false, {
+                    fileName: "src/App.js",
+                    lineNumber: 11,
+                    columnNumber: 11
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouter.Route), {
+                    path: "/dashboard",
+                    element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _dashboardDefault.default), {}, void 0, false, {
+                        fileName: "src/App.js",
+                        lineNumber: 12,
+                        columnNumber: 45
+                    }, void 0)
+                }, void 0, false, {
+                    fileName: "src/App.js",
+                    lineNumber: 12,
+                    columnNumber: 11
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouter.Route), {
+                    path: "/error",
+                    element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _errorDefault.default), {}, void 0, false, {
+                        fileName: "src/App.js",
+                        lineNumber: 13,
+                        columnNumber: 41
+                    }, void 0)
+                }, void 0, false, {
+                    fileName: "src/App.js",
+                    lineNumber: 13,
+                    columnNumber: 11
+                }, undefined)
+            ]
+        }, void 0, true, {
+            fileName: "src/App.js",
+            lineNumber: 10,
+            columnNumber: 9
+        }, undefined)
+    }, void 0, false, {
+        fileName: "src/App.js",
+        lineNumber: 9,
+        columnNumber: 9
+    }, undefined);
+};
+_c = App;
+exports.default = App;
+var _c;
+$RefreshReg$(_c, "App");
+
+  $parcel$ReactRefreshHelpers$4089.postlude(module);
+} finally {
+  globalThis.$RefreshReg$ = prevRefreshReg;
+  globalThis.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","../components/Example":"k3Tmd","../components/Dashboard":"afPWz","../components/Error":"92xM8","react-router":"2jawN","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"k3Tmd":[function(require,module,exports,__globalThis) {
+var $parcel$ReactRefreshHelpers$7f85 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+$parcel$ReactRefreshHelpers$7f85.init();
+var prevRefreshReg = globalThis.$RefreshReg$;
+var prevRefreshSig = globalThis.$RefreshSig$;
+$parcel$ReactRefreshHelpers$7f85.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _auth0React = require("@auth0/auth0-react");
+var _s = $RefreshSig$();
+const Example = ()=>{
+    _s();
+    const { loginWithRedirect, logout, isAuthenticated } = (0, _auth0React.useAuth0)();
+    console.log(isAuthenticated);
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "flex justify-center items-center min-h-screen",
+        children: !isAuthenticated ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+            onClick: ()=>loginWithRedirect(),
+            className: "cursor-pointer px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-500",
+            children: "Login / Signup"
+        }, void 0, false, {
+            fileName: "components/Example.js",
+            lineNumber: 12,
+            columnNumber: 9
+        }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+            onClick: ()=>logout({
+                    logoutParams: {
+                        returnTo: window.location.origin
+                    }
+                }),
+            className: "cursor-pointer px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-500",
+            children: "Logout"
+        }, void 0, false, {
+            fileName: "components/Example.js",
+            lineNumber: 19,
+            columnNumber: 9
+        }, undefined)
+    }, void 0, false, {
+        fileName: "components/Example.js",
+        lineNumber: 10,
+        columnNumber: 5
+    }, undefined);
+};
+_s(Example, "dELrWSWGk/VI6QVLd5sCxicaM/k=", false, function() {
+    return [
+        (0, _auth0React.useAuth0)
+    ];
+});
+_c = Example;
+exports.default = Example;
+var _c;
+$RefreshReg$(_c, "Example");
+
+  $parcel$ReactRefreshHelpers$7f85.postlude(module);
+} finally {
+  globalThis.$RefreshReg$ = prevRefreshReg;
+  globalThis.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","@auth0/auth0-react":"6XUEC","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"afPWz":[function(require,module,exports,__globalThis) {
 var $parcel$ReactRefreshHelpers$025b = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 $parcel$ReactRefreshHelpers$025b.init();
 var prevRefreshReg = globalThis.$RefreshReg$;
@@ -21007,10 +21061,19 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _auth0React = require("@auth0/auth0-react");
+var _reactRouter = require("react-router");
 var _s = $RefreshSig$();
 const Dashboard = ()=>{
     _s();
-    const { user, logout } = (0, _auth0React.useAuth0)();
+    const { user, logout, isAuthenticated } = (0, _auth0React.useAuth0)();
+    const navigate = (0, _reactRouter.useNavigate)();
+    (0, _react.useEffect)(()=>{
+        if (!isAuthenticated) navigate("/error");
+    }, [
+        isAuthenticated,
+        navigate
+    ]);
+    if (!isAuthenticated) return null;
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "flex flex-col items-center justify-center min-h-screen",
         children: [
@@ -21022,7 +21085,7 @@ const Dashboard = ()=>{
                 ]
             }, void 0, true, {
                 fileName: "components/Dashboard.js",
-                lineNumber: 9,
+                lineNumber: 23,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -21030,7 +21093,7 @@ const Dashboard = ()=>{
                 children: user?.email
             }, void 0, false, {
                 fileName: "components/Dashboard.js",
-                lineNumber: 10,
+                lineNumber: 24,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -21039,23 +21102,24 @@ const Dashboard = ()=>{
                             returnTo: window.location.origin
                         }
                     }),
-                className: "mt-4 px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-500",
+                className: "cursor-pointer mt-4 px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-500",
                 children: "Logout"
             }, void 0, false, {
                 fileName: "components/Dashboard.js",
-                lineNumber: 11,
+                lineNumber: 25,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "components/Dashboard.js",
-        lineNumber: 8,
+        lineNumber: 22,
         columnNumber: 5
     }, undefined);
 };
-_s(Dashboard, "I8pFy9xJY16yyFX43BobbICUUI0=", false, function() {
+_s(Dashboard, "v9SDsZZRQoQIo+7qCJTZnv2Bd2I=", false, function() {
     return [
-        (0, _auth0React.useAuth0)
+        (0, _auth0React.useAuth0),
+        (0, _reactRouter.useNavigate)
     ];
 });
 _c = Dashboard;
@@ -21068,7 +21132,7 @@ $RefreshReg$(_c, "Dashboard");
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","@auth0/auth0-react":"6XUEC","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"2jawN":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","@auth0/auth0-react":"6XUEC","react-router":"2jawN","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"2jawN":[function(require,module,exports,__globalThis) {
 /**
  * react-router v7.4.0
  *
@@ -30520,51 +30584,64 @@ module.exports.parse = parse;
 module.exports.parseString = parseString;
 module.exports.splitCookiesString = splitCookiesString;
 
-},{}],"1cUYl":[function(require,module,exports,__globalThis) {
-var $parcel$ReactRefreshHelpers$28ac = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-$parcel$ReactRefreshHelpers$28ac.init();
+},{}],"92xM8":[function(require,module,exports,__globalThis) {
+var $parcel$ReactRefreshHelpers$54f4 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+$parcel$ReactRefreshHelpers$54f4.init();
 var prevRefreshReg = globalThis.$RefreshReg$;
 var prevRefreshSig = globalThis.$RefreshSig$;
-$parcel$ReactRefreshHelpers$28ac.prelude(module);
+$parcel$ReactRefreshHelpers$54f4.prelude(module);
 
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _auth0React = require("@auth0/auth0-react");
-var _constants = require("../utils/constants");
-const AuthProvider = ({ children })=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _auth0React.Auth0Provider), {
-        domain: (0, _constants.AUTH_DOMAIN),
-        clientId: (0, _constants.CLIENT_ID),
-        authorizationParams: {
-            redirect_uri: `${window.location.origin}/dashboard`
-        },
-        children: children
-    }, void 0, false, {
-        fileName: "src/AuthProvider.js",
-        lineNumber: 6,
+var _reactRouter = require("react-router");
+const Error = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "flex flex-col items-center justify-center min-h-screen bg-gray-100 text-center",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                className: "text-3xl font-bold text-red-600",
+                children: "Access Denied"
+            }, void 0, false, {
+                fileName: "components/Error.js",
+                lineNumber: 6,
+                columnNumber: 11
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                className: "text-gray-700 mt-2",
+                children: "You are not authorized to view this page."
+            }, void 0, false, {
+                fileName: "components/Error.js",
+                lineNumber: 7,
+                columnNumber: 11
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouter.Link), {
+                to: "/",
+                className: "mt-4 px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-500",
+                children: "Go to Login"
+            }, void 0, false, {
+                fileName: "components/Error.js",
+                lineNumber: 10,
+                columnNumber: 11
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "components/Error.js",
+        lineNumber: 5,
         columnNumber: 9
     }, undefined);
 };
-_c = AuthProvider;
-exports.default = AuthProvider;
+_c = Error;
+exports.default = Error;
 var _c;
-$RefreshReg$(_c, "AuthProvider");
+$RefreshReg$(_c, "Error");
 
-  $parcel$ReactRefreshHelpers$28ac.postlude(module);
+  $parcel$ReactRefreshHelpers$54f4.postlude(module);
 } finally {
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"dVPUn","@auth0/auth0-react":"6XUEC","../utils/constants":"jcEU6","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"jcEU6":[function(require,module,exports,__globalThis) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "AUTH_DOMAIN", ()=>AUTH_DOMAIN);
-parcelHelpers.export(exports, "CLIENT_ID", ()=>CLIENT_ID);
-const AUTH_DOMAIN = "dev-6mguncdaalrmu27g.us.auth0.com";
-const CLIENT_ID = "PB4TcwzXxfS1fy8XxREwxu3xGMChx6Vx";
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}]},["ihYAY","a0t4e"], "a0t4e", "parcelRequire5a60", null, null, "http://localhost:1234")
+},{"react/jsx-dev-runtime":"dVPUn","react-router":"2jawN","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}]},["ihYAY","a0t4e"], "a0t4e", "parcelRequire5a60", null, null, "http://localhost:1234")
 
 //# sourceMappingURL=P0C.31b563d9.js.map
