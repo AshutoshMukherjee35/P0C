@@ -2,18 +2,16 @@ import React from "react";
 import Example from "../components/Example";
 import Dashboard from "../components/Dashboard";
 import Error from "../components/Error";
-import { BrowserRouter as Router, Routes, Route } from "react-router";
+import { Routes, Route } from "react-router";
 
 const App = () => {
-    return(
-        <Router>
-        <Routes>
-          <Route path="/" element={<Example/>} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/error" element={<Error />} />
-        </Routes>
-      </Router>
-    )
-}
+  return (
+    <Routes>
+      <Route path="/" element={<Example />} />
+      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/error" element={<Error />} />
+    </Routes>
+  );
+};
 
 export default App;
