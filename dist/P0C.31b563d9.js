@@ -30454,11 +30454,17 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _useAuthActions = require("../utils/useAuthActions");
 var _useAuthActionsDefault = parcelHelpers.interopDefault(_useAuthActions);
+var _loadingScreen = require("./LoadingScreen");
+var _loadingScreenDefault = parcelHelpers.interopDefault(_loadingScreen);
 var _s = $RefreshSig$();
 const Example = ()=>{
     _s();
-    const { handleLogin } = (0, _useAuthActionsDefault.default)();
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+    const { handleLogin, isLoading } = (0, _useAuthActionsDefault.default)();
+    return isLoading ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _loadingScreenDefault.default), {}, void 0, false, {
+        fileName: "components/Example.js",
+        lineNumber: 8,
+        columnNumber: 22
+    }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "flex justify-center items-center min-h-screen",
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
             onClick: handleLogin,
@@ -30466,16 +30472,16 @@ const Example = ()=>{
             children: "Login / Signup"
         }, void 0, false, {
             fileName: "components/Example.js",
-            lineNumber: 9,
+            lineNumber: 10,
             columnNumber: 7
         }, undefined)
     }, void 0, false, {
         fileName: "components/Example.js",
-        lineNumber: 8,
+        lineNumber: 9,
         columnNumber: 5
     }, undefined);
 };
-_s(Example, "ZkAZUHJuIyLd5+X4V7ueJ7MkWGU=", false, function() {
+_s(Example, "pS73sRAspPIww70uYFm6Ju+dM18=", false, function() {
     return [
         (0, _useAuthActionsDefault.default)
     ];
@@ -30490,7 +30496,7 @@ $RefreshReg$(_c, "Example");
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi","../utils/useAuthActions":"je5I7"}],"je5I7":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","../utils/useAuthActions":"je5I7","./LoadingScreen":"1Dgem","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"je5I7":[function(require,module,exports,__globalThis) {
 var $parcel$ReactRefreshHelpers$7969 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 $parcel$ReactRefreshHelpers$7969.init();
 var prevRefreshReg = globalThis.$RefreshReg$;
@@ -30506,7 +30512,7 @@ var _reactRouter = require("react-router");
 var _s = $RefreshSig$();
 const useAuthActions = ()=>{
     _s();
-    const { loginWithRedirect, isAuthenticated } = (0, _auth0React.useAuth0)();
+    const { loginWithRedirect, isAuthenticated, isLoading } = (0, _auth0React.useAuth0)();
     const navigate = (0, _reactRouter.useNavigate)();
     const handleLogin = async ()=>{
         await loginWithRedirect({
@@ -30522,10 +30528,11 @@ const useAuthActions = ()=>{
         navigate
     ]);
     return {
-        handleLogin
+        handleLogin,
+        isLoading
     };
 };
-_s(useAuthActions, "7L6vZExYyD4gIBJkVvia/JCtCms=", false, function() {
+_s(useAuthActions, "Kit1/Rzo8yREZTpe+klmQfQVYO4=", false, function() {
     return [
         (0, _auth0React.useAuth0),
         (0, _reactRouter.useNavigate)
@@ -30538,7 +30545,56 @@ exports.default = useAuthActions;
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"jMk1U","@auth0/auth0-react":"6XUEC","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi","react-router":"2jawN"}],"afPWz":[function(require,module,exports,__globalThis) {
+},{"react":"jMk1U","@auth0/auth0-react":"6XUEC","react-router":"2jawN","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"1Dgem":[function(require,module,exports,__globalThis) {
+var $parcel$ReactRefreshHelpers$929b = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+$parcel$ReactRefreshHelpers$929b.init();
+var prevRefreshReg = globalThis.$RefreshReg$;
+var prevRefreshSig = globalThis.$RefreshSig$;
+$parcel$ReactRefreshHelpers$929b.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+const LoadingScreen = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "flex items-center justify-center min-h-screen bg-gray-100",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "animate-spin rounded-full h-12 w-12 border-4 border-blue-500 border-t-transparent"
+            }, void 0, false, {
+                fileName: "components/LoadingScreen.js",
+                lineNumber: 6,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                className: "ml-4 text-lg font-semibold text-gray-700",
+                children: "Loading..."
+            }, void 0, false, {
+                fileName: "components/LoadingScreen.js",
+                lineNumber: 7,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "components/LoadingScreen.js",
+        lineNumber: 5,
+        columnNumber: 5
+    }, undefined);
+};
+_c = LoadingScreen;
+exports.default = LoadingScreen;
+var _c;
+$RefreshReg$(_c, "LoadingScreen");
+
+  $parcel$ReactRefreshHelpers$929b.postlude(module);
+} finally {
+  globalThis.$RefreshReg$ = prevRefreshReg;
+  globalThis.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"afPWz":[function(require,module,exports,__globalThis) {
 var $parcel$ReactRefreshHelpers$025b = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 $parcel$ReactRefreshHelpers$025b.init();
 var prevRefreshReg = globalThis.$RefreshReg$;
@@ -30684,55 +30740,6 @@ $RefreshReg$(_c, "Error");
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"dVPUn","react-router":"2jawN","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"1Dgem":[function(require,module,exports,__globalThis) {
-var $parcel$ReactRefreshHelpers$929b = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-$parcel$ReactRefreshHelpers$929b.init();
-var prevRefreshReg = globalThis.$RefreshReg$;
-var prevRefreshSig = globalThis.$RefreshSig$;
-$parcel$ReactRefreshHelpers$929b.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-const LoadingScreen = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "flex items-center justify-center min-h-screen bg-gray-100",
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "animate-spin rounded-full h-12 w-12 border-4 border-blue-500 border-t-transparent"
-            }, void 0, false, {
-                fileName: "components/LoadingScreen.js",
-                lineNumber: 6,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                className: "ml-4 text-lg font-semibold text-gray-700",
-                children: "Loading..."
-            }, void 0, false, {
-                fileName: "components/LoadingScreen.js",
-                lineNumber: 7,
-                columnNumber: 7
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "components/LoadingScreen.js",
-        lineNumber: 5,
-        columnNumber: 5
-    }, undefined);
-};
-_c = LoadingScreen;
-exports.default = LoadingScreen;
-var _c;
-$RefreshReg$(_c, "LoadingScreen");
-
-  $parcel$ReactRefreshHelpers$929b.postlude(module);
-} finally {
-  globalThis.$RefreshReg$ = prevRefreshReg;
-  globalThis.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}]},["ihYAY","a0t4e"], "a0t4e", "parcelRequire5a60", null, null, "http://localhost:1234")
+},{"react/jsx-dev-runtime":"dVPUn","react-router":"2jawN","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}]},["ihYAY","a0t4e"], "a0t4e", "parcelRequire5a60", null, null, "http://localhost:1234")
 
 //# sourceMappingURL=P0C.31b563d9.js.map

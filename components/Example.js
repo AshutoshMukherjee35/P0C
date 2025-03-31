@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
 import useAuthActions from "../utils/useAuthActions";
+import LoadingScreen from "./LoadingScreen";
 
 const Example = () => {
-  const { handleLogin } = useAuthActions();
+  const { handleLogin, isLoading } = useAuthActions();
 
-  return (
+  return isLoading ? <LoadingScreen/> : (
     <div className="flex justify-center items-center min-h-screen">
       <button
         onClick={handleLogin}

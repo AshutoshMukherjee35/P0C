@@ -1,3 +1,3 @@
-export const AUTH_DOMAIN = "dev-6mguncdaalrmu27g.us.auth0.com"
-export const CLIENT_ID = "PB4TcwzXxfS1fy8XxREwxu3xGMChx6Vx"
-export const REDIRECT_URI = "http://localhost:1234"
+export const AUTH_DOMAIN = process.env.APP_AUTH_DOMAIN;
+export const CLIENT_ID = process.env.APP_CLIENT_ID;
+export const REDIRECT_URI = process.env.APP_REDIRECT_URI;
