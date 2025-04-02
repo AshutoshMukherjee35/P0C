@@ -5,6 +5,8 @@ import LoadingScreen from "./LoadingScreen";
 
 const Dashboard = () => {
   const { user, logout, isAuthenticated, isLoading } = useAuth0();
+ console.log(user)
+ console.log("User Roles:", user?.["http://localhost:1234"]);
   if (isLoading) {
     return <LoadingScreen />;
   }
@@ -15,6 +17,7 @@ const Dashboard = () => {
     <div className="flex flex-col items-center justify-center min-h-screen">
       <h1 className="text-2xl font-bold">Welcome, {user?.name}</h1>
       <p className="text-gray-600">{user?.email}</p>
+      <p className="text-gray-600">{user?.['http://localhost:1234']}</p>
       <button
         onClick={() =>
           logout({ logoutParams: { returnTo: window.location.origin } })

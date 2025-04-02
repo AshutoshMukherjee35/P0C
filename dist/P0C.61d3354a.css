@@ -22,6 +22,7 @@
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
     --radius-md: .375rem;
+    --radius-lg: .5rem;
     --animate-spin: spin 1s linear infinite;
     --default-transition-duration: .15s;
     --default-transition-timing-function: cubic-bezier(.4, 0, .2, 1);
@@ -436,8 +437,16 @@
     justify-content: center;
   }
 
+  .gap-4 {
+    gap: calc(var(--spacing) * 4);
+  }
+
   .rounded-full {
     border-radius: 3.40282e38px;
+  }
+
+  .rounded-lg {
+    border-radius: var(--radius-lg);
   }
 
   .rounded-md {
@@ -478,8 +487,16 @@
     padding-inline: calc(var(--spacing) * 4);
   }
 
+  .px-6 {
+    padding-inline: calc(var(--spacing) * 6);
+  }
+
   .py-2 {
     padding-block: calc(var(--spacing) * 2);
+  }
+
+  .py-3 {
+    padding-block: calc(var(--spacing) * 3);
   }
 
   .text-center {
