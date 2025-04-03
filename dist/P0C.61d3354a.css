@@ -361,6 +361,10 @@
     margin-top: calc(var(--spacing) * 4);
   }
 
+  .mt-6 {
+    margin-top: calc(var(--spacing) * 6);
+  }
+
   .mt-49 {
     margin-top: calc(var(--spacing) * 49);
   }

@@ -3,17 +3,17 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { useNavigate } from "react-router";
 
 const useAuthActions = () => {
-  const { loginWithRedirect, isAuthenticated, isLoading } = useAuth0();
+  const { loginWithRedirect, isAuthenticated, isLoading, user } = useAuth0();
   const navigate = useNavigate();
 
-  const handleLogin = async () => {
+  const handleLogin = async (redirectPath = "/dashboard") => {
     await loginWithRedirect({
-      appState: { returnTo: "/dashboard" }
+      appState: { returnTo: redirectPath }
     });
   };
 
   useEffect(() => {
-    if (isAuthenticated) {
+    if (isAuthenticated && user) {
       navigate("/dashboard");
     }
   }, [isAuthenticated, navigate]);
