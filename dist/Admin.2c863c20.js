@@ -677,32 +677,82 @@ var _error = require("./Error");
 var _errorDefault = parcelHelpers.interopDefault(_error);
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactRouter = require("react-router");
+var _loadingScreen = require("./LoadingScreen");
+var _loadingScreenDefault = parcelHelpers.interopDefault(_loadingScreen);
 var _s = $RefreshSig$();
 const Admin = ()=>{
     _s();
-    const { user } = (0, _auth0React.useAuth0)();
+    const { user, logout, isLoading } = (0, _auth0React.useAuth0)();
+    const navigate = (0, _reactRouter.useNavigate)();
     let role = (0, _react.useMemo)(()=>user?.["http://localhost:1234"]?.[0]);
-    return role !== 'Admin' ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _errorDefault.default), {}, void 0, false, {
+    return isLoading ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _loadingScreenDefault.default), {}, void 0, false, {
         fileName: "components/Admin.js",
-        lineNumber: 10,
-        columnNumber: 30
+        lineNumber: 13,
+        columnNumber: 25
+    }, undefined) : role !== 'Admin' ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _errorDefault.default), {}, void 0, false, {
+        fileName: "components/Admin.js",
+        lineNumber: 13,
+        columnNumber: 63
     }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-            children: "Admin Access Page"
-        }, void 0, false, {
-            fileName: "components/Admin.js",
-            lineNumber: 12,
-            columnNumber: 13
-        }, undefined)
-    }, void 0, false, {
+        className: "flex flex-col items-center justify-center min-h-screen",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                className: "text-2xl font-bold",
+                children: "Admin Access Page"
+            }, void 0, false, {
+                fileName: "components/Admin.js",
+                lineNumber: 15,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                onClick: ()=>navigate(-1),
+                className: "cursor-pointer mt-4 px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-500",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                        children: " \u2190"
+                    }, void 0, false, {
+                        fileName: "components/Admin.js",
+                        lineNumber: 20,
+                        columnNumber: 8
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                        children: " Go Back"
+                    }, void 0, false, {
+                        fileName: "components/Admin.js",
+                        lineNumber: 20,
+                        columnNumber: 28
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "components/Admin.js",
+                lineNumber: 16,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                onClick: ()=>logout({
+                        logoutParams: {
+                            returnTo: window.location.origin
+                        }
+                    }),
+                className: "cursor-pointer mt-4 px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-500",
+                children: "Logout"
+            }, void 0, false, {
+                fileName: "components/Admin.js",
+                lineNumber: 22,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
         fileName: "components/Admin.js",
-        lineNumber: 11,
+        lineNumber: 14,
         columnNumber: 9
     }, undefined);
 };
-_s(Admin, "WJMfoxWSglHSz8URwdZ0SbnoW24=", false, function() {
+_s(Admin, "JkkfGigsfCjHvBlHvVFrQzZrPH8=", false, function() {
     return [
-        (0, _auth0React.useAuth0)
+        (0, _auth0React.useAuth0),
+        (0, _reactRouter.useNavigate)
     ];
 });
 _c = Admin;
@@ -715,6 +765,6 @@ $RefreshReg$(_c, "Admin");
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"dVPUn","@auth0/auth0-react":"6XUEC","./Error":"92xM8","react":"jMk1U","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}]},["2t8b2"], null, "parcelRequire5a60")
+},{"react/jsx-dev-runtime":"dVPUn","@auth0/auth0-react":"6XUEC","./Error":"92xM8","react":"jMk1U","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi","react-router":"2jawN","./LoadingScreen":"1Dgem"}]},["2t8b2"], null, "parcelRequire5a60")
 
 //# sourceMappingURL=Admin.2c863c20.js.map

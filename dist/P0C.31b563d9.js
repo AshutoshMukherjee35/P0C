@@ -30474,7 +30474,7 @@ $RefreshReg$(_c8, "App");
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","react-router":"2jawN","../components/LoadingScreen":"1Dgem","@auth0/auth0-react":"6XUEC","a5234b0bf9a1bfb8":"beYtQ","12c94212bba0f3bd":"aFEad","27fde04048002451":"9KiJ9","10b07b2fefacadb8":"bPUT6","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"1Dgem":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","react-router":"2jawN","../components/LoadingScreen":"1Dgem","a5234b0bf9a1bfb8":"beYtQ","12c94212bba0f3bd":"aFEad","27fde04048002451":"9KiJ9","10b07b2fefacadb8":"bPUT6","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"1Dgem":[function(require,module,exports,__globalThis) {
 var $parcel$ReactRefreshHelpers$929b = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 $parcel$ReactRefreshHelpers$929b.init();
 var prevRefreshReg = globalThis.$RefreshReg$;
