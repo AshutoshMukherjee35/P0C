@@ -20,3 +20,13 @@ Upon clicking the Login button the user will be redirected to the Auth0 login pa
 
 This happens because an API call takes place and once the user is authenticated the user is redirected to the dashboard page. The dashboard page looks like this
 ![dashboard](image-4.png)
+
+You can see as the logged in user is a user with no elevated privelages it's only displaying the logout button and user details. So to elevate the user privelages you need to add the user to the admin group in the auth0.
+
+In the Auth0 dashboard we can go to user management pannel and create the roles that we need in our application
+![Roles](image-5.png)
+![alt text](image-6.png)
+our app uses 2 roles Admin and User which is created from the dashboard itself.
+
+Now we can assign role to all the users who have logged in into our app
+![alt text](image-7.png)
